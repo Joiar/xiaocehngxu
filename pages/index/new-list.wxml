@@ -1,0 +1,38 @@
+<!--index.wxml-->
+
+
+<view class="product">
+<view class="pro-hd">
+<view class="pro-tle">新闻动态</view></view>
+<view class="pro-list clearfix">
+<block wx:for="{{data.newss}}" >
+    <navigator class="pro-item clearfix" url="../index/new?id={{item.id}}">
+        <view class="pro-img"><image src="{{imgurl}}{{item.litpic}}"></image></view>
+        <view class="pro-text"><text class="pro-name">{{item.title}}</text>
+        <text class="pro-des">{{item.description}}</text>
+        </view>
+    </navigator>
+</block>
+</view>
+</view>
+<view class="nav-list">
+<view class="navl-tle1">公司导航</view>
+<view class="nav-list1 cleatfix">
+<block wx:for="{{data.arctype}}" >
+        <navigator url="/pages/index/{{item.defaultnames}}?typeid={{item.id}}">{{item.typename}}</navigator>
+</block>
+</view></view> 
+<view class="copyright">
+<block wx:for="{{data.copyrights}}" >
+   <text>{{item.description}}</text> 
+</block>
+</view>
+
+
+
+
+
+
+
+ 
+

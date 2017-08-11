@@ -1,0 +1,102 @@
+<!--index.wxml-->
+
+
+<swiper class="banner" indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{data.banner}}">
+    <swiper-item>
+      <image src="{{imgurl}}{{item.litpic}}" class="slide-image" width="355" height="150"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class="pro-nav clearfix">
+ <block wx:for="{{data.icons}}" >
+    <view class="nav"><view class="circle navc-{{index+1}}"><image src="{{imgurl}}{{item.litpic}}"></image></view><text>{{item.title}}</text></view> 
+</block> 
+</view>
+<block wx:for="{{data.newWork}}" >
+  <view class="new-f"><text class="newf-tle">{{item.title}}</text>
+  <text class="new-ft">{{item.body}}</text>
+  </view>
+</block>
+<view class="product">
+<view class="pro-hd">
+<view class="pro-tle">推荐产品</view></view>
+<view class="pro-list clearfix">
+<block wx:for="{{data.goodProduct}}" >
+    <navigator class="pro-item clearfix" url="/pages/index/detail?id={{item.id}}">
+        <view class="pro-img"><image src="{{imgurl}}{{item.litpic}}"></image></view>
+        <view class="pro-text"><text class="pro-name">{{item.title}}</text>
+        <text class="pro-des">{{item.description}}</text>
+        </view>
+    </navigator>
+</block>
+</view>
+</view>
+<view class="product">
+<view class="pro-hd">
+<view class="pro-tle">热销产品</view></view>
+<view class="pro-list clearfix">
+<block wx:for="{{data.hotProduct}}" >
+    <navigator class="pro-item clearfix" url="/pages/index/detail?id={{item.id}}">
+        <view class="pro-img"><image src="{{imgurl}}{{item.litpic}}"></image></view>
+        <view class="pro-text"><text class="pro-name">{{item.title}}</text>
+        <text class="pro-des">{{item.description}}</text>
+        </view>
+    </navigator>
+</block>
+
+</view>
+</view>
+
+<view class="product">
+<view class="pro-hd">
+<view class="pro-tle">最新产品</view></view>
+<view class="pro-list clearfix">
+<block wx:for="{{data.newProduct}}" >
+    <navigator class="pro-item clearfix" url="/pages/index/detail?id={{item.id}}">
+        <view class="pro-img"><image src="{{imgurl}}{{item.litpic}}"></image></view>
+        <view class="pro-text"><text class="pro-name">{{item.title}}</text>
+        <text class="pro-des">{{item.description}}</text>
+        </view>
+    </navigator>
+</block>
+</view>
+</view>
+<view class="pro-hd">
+<view class="pro-tle">最新咨询</view></view>
+<view class="new">
+<block wx:for="{{data.newAsk}}" >
+    <view class="new-si"><text class="newsi-tle">{{item.title}}</text>
+  <text class="newsi-des">{{item.description}}</text>
+  </view>
+</block>
+
+<view class="new-list">
+<block wx:for="{{data.newWorks}}" >
+    <navigator url="/pages/index/new?id={{item.id}}" class="clearfix"><text>{{item.title}}</text><image src="{{imgurl}}{{item.litpic}}"></image></navigator>
+</block>
+
+</view>
+</view>
+<view class="nav-list">
+<view class="navl-tle1">公司导航</view>
+<view class="nav-list1 cleatfix">
+<block wx:for="{{data.arctype}}" >
+        <navigator url="/pages/index/{{item.defaultnames}}?typeid={{item.id}}">{{item.typename}}</navigator>
+</block>
+</view></view> 
+<view class="copyright">
+<block wx:for="{{data.copyrights}}" >
+   <text>{{item.description}}</text> 
+</block>
+</view>
+
+
+
+
+
+
+
+
